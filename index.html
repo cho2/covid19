@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Covid19</title>    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<h2>Covid19</h2>
+
+<div class="tab">
+  <button class="tablinks" onclick="openMaps(event, 'covid19.go.id')">covid19.go.id</button>
+  <button class="tablinks" onclick="openMaps(event, 'kawalcovid19')">kawalcovid19</button>
+  <button class="tablinks" onclick="openMaps(event, 'corona.jakarta.go.id')">corona.jakarta.go.id</button>
+  <button class="tablinks" onclick="openMaps(event, 'pikobar.jabarprov.go.id')">pikobar.jabarprov.go.id</button>
+  <button class="tablinks" onclick="openMaps(event, 'corona.jatengprov.go.id')">corona.jatengprov.go.id</button>
+  <button class="tablinks" onclick="openMaps(event, 'corona.jogjaprov.go.id')">corona.jogjaprov.go.id</button>
+  <button class="tablinks" onclick="openMaps(event, 'checkupcovid19.jatimprov.go.id')">checkupcovid19.jatimprov.go.id</button>
+</div>
+
+<div id="covid19.go.id" class="tabcontent">
+  <h3>covid19.go.id</h3>
+  <iframe src="https://experience.arcgis.com/experience/57237ebe9c5b4b1caa1b93e79c920338" allowfullscreen="" width="100%" height="850" frameborder="0"></iframe>
+</div>
+
+<div id="kawalcovid19" class="tabcontent">
+  <h3>kawalcovid19</h3>
+  <iframe src="https://kawalcovid19.blob.core.windows.net/viz/statistik_harian.html" allowfullscreen="" width="100%" height="850" frameborder="0"></iframe>
+</div>
+
+<div id="corona.jakarta.go.id" class="tabcontent">
+  <h3><a href="https://corona.jakarta.go.id">corona.jakarta.go.id</a></h3>
+</div>
+
+<div id="pikobar.jabarprov.go.id" class="tabcontent">
+    <h3><a href="https://pikobar.jabarprov.go.id">pikobar.jabarprov.go.id</a></h3>
+</div>
+  
+<div id="corona.jatengprov.go.id" class="tabcontent">
+    <h3><a href="https://corona.jatengprov.go.id">corona.jatengprov.go.id</a></h3>
+</div>
+
+<div id="corona.jogjaprov.go.id" class="tabcontent">
+    <h3><a href="https://corona.jogjaprov.go.id">corona.jogjaprov.go.id</a></h3>
+</div>
+  
+<div id="checkupcovid19.jatimprov.go.id" class="tabcontent">
+    <h3><a href="http://checkupcovid19.jatimprov.go.id">checkupcovid19.jatimprov.go.id</a></h3>
+</div>
+  
+
+<script>
+function openMaps(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
